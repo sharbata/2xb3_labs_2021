@@ -29,4 +29,7 @@ def are_valid_groups(student_nums, groups):
 nums = ["12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
 groups = [["12", "13", "11",], ["14", "15", "16"], ["17", "18"], ["19", "20", "21"], ["22", "23", "24"]]
 
-#print(are_valid_groups(nums, groups))
+## Toronto Raptors = We the South
+## YOU MAD BRO?
+
+print(are_valid_groups(nums, groups))
