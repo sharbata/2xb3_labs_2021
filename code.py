@@ -11,7 +11,7 @@ def are_valid_groups(student_nums, groups):
     return True
            
 
-
+## Toronto Raptors = We the South
 nums = [12, 13, 14, 16, 18, 821, 763, 290, 27723, 25267]
 groups = [[12, 821, 763], [13, 14, 290], [16, 18, 27723]]
 
