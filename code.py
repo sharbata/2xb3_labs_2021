@@ -1,6 +1,6 @@
+
 def are_valid_groups(student_nums, groups):
     students_in_groups = []
-
     #adds student numbers in all groups to one list of strings
     for i in range(len(groups)):
         for j in groups[i]:
