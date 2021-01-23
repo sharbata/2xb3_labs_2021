@@ -3,8 +3,8 @@ def are_valid_groups(student_nums, groups):
 
     #adds student numbers in all groups to one list of strings
     for i in range(len(groups)):
-         for j in groups[i]:
-             students_in_groups.append(j)
+        for j in groups[i]:
+            students_in_groups.append(j)
 
     #checks if all groups are only of size 2 or 3
     for i in groups:
@@ -22,14 +22,11 @@ def are_valid_groups(student_nums, groups):
         if(i in students_in_groups):
             #print("occured again")
             return False
-    
+
     return True
-           
+
 
 nums = ["12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
 groups = [["12", "13", "11",], ["14", "15", "16"], ["17", "18"], ["19", "20", "21"], ["22", "23", "24"]]
 
-## Toronto Raptors = We the South
-## YOU MAD BRO?
 
-print(are_valid_groups(nums, groups))
