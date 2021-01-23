@@ -26,6 +26,7 @@ def are_valid_groups(student_nums, groups):
     return True
 
 #comment
+#YOU MAD EH DO YOU EVEN LIFT? 
 
 
 nums = ["12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
