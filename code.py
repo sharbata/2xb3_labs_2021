@@ -1,18 +1,32 @@
 def are_valid_groups(student_nums, groups):
     students_in_groups = []
-    for i in range(len(groups)):
-        for j in groups[i]:
-            students_in_groups.append(j)
 
+    #adds student numbers in all groups to one list of strings
+    for i in range(len(groups)):
+         for j in groups[i]:
+             students_in_groups.append(j)
+
+    #checks if all groups are only of size 2 or 3
+    for i in groups:
+        if len(i) < 2 or len(i) > 3:
+            return False
+    #print("group size passed")
+
+    #check if student number is in a group and only occurs once between all groups
     for i in student_nums:
         if(not(i in students_in_groups)):
+            #print("doesn't exist")
+            return False
+        if(i in students_in_groups):
+            students_in_groups.remove(i)
+        if(i in students_in_groups):
+            #print("occured again")
             return False
     
     return True
            
 
+nums = ["12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+groups = [["12", "13", "11",], ["14", "15", "16"], ["17", "18"], ["19", "20", "21"], ["22", "23", "24"]]
 
-nums = [12, 13, 14, 16, 18, 821, 763, 290, 27723, 25267]
-groups = [[12, 821, 763], [13, 14, 290], [16, 18, 27723]]
-
-print(are_valid_groups(nums, groups))
+#print(are_valid_groups(nums, groups))
