@@ -57,6 +57,25 @@ lookups_test()
 
 append_test()
 
+#Test used for list copy method
+def randList(size, maxValue):
+    l1 = []
+    for i in range(size):
+        l1.append(random.randint(0, maxValue))
+    return l1
 
-d = {"name":"Ammar", "age":"20", "marks":"L"}
+def timeTest(runs, size, maxValue):
+    total = 0 
+    randomList = randList(size, maxValue)
+    for i in range(runs):
+        start = timeit.default_timer()
+        l2 = randomList.copy()
+        end = timeit.default_timer()
+        total += end - start 
+    avg = total/runs
+    return avg 
+        
+
+
+
 
