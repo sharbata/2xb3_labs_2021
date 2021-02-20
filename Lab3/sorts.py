@@ -45,8 +45,77 @@ def merge_bottom(L, start, mid, end):
         k = k + 1
 
 #three-way mergesort implementation
-def mergesort_three():
-    return
+def mergesort_three(L):
+    if len(L) <= 1:
+        return L
+    if len(L) <= 2: 
+        if (L[0] <= L[1]):
+            return L
+        else: 
+            temp = L[0]
+            L[0] = L[1]
+            L[1] = temp
+            return L
+    mid1 = len(L)//3
+    mid2 = 2*(len(L)//3)
+    left = L[:mid1]
+    center = L[mid1:mid2]
+    right = L[mid2:]
+ 
+    mergesort_three(left)
+    mergesort_three(center)
+    mergesort_three(right)
 
-def merge_three():
-    return
+    temp = merge_three(left, center, right)
+
+    for i in range(len(temp)):
+        L[i] = temp[i]
+    return L
+
+
+def merge_three(left, center, right): 
+    L = []
+    i = j = k = 0
+
+    while i < len(left) or j < len(center) or k < len(right):
+        if(i >= len(left) and j >= len(center)):
+            L.append(right[k])
+            k = k + 1
+        elif(i >= len(left) and k >= len(right)):
+            L.append(center[j])
+            j = j + 1
+        elif(j >= len(center) and k >= len(right)):
+            L.append(left[i])
+            i = i + 1
+        elif(i >= len(left)):
+            if (center[j] <= right[k]):
+                L.append(center[j])
+                j = j + 1
+            else: 
+                L.append(right[k])
+                k = k + 1
+        elif (j >= len(center)):
+            if (left[i] <= right[k]):
+                L.append(left[i])
+                i = i + 1
+            else: 
+                L.append(right[k])
+                k = k + 1
+        elif (k >= len(right)):
+            if (left[i] <= center[j]):
+                L.append(left[i])
+                i = i + 1
+            else: 
+                L.append(center[j])
+                j = j + 1
+        else:
+            if(left[i] <= center[j] and left[i] <= right[k]):
+                L.append(left[i])
+                i = i + 1
+            elif(right[k] <= center[j] and right[k] <= left[i]):
+                L.append(right[k])
+                k = k + 1 
+            elif (center[j] <= left[i] and center[j] <= right[k]):
+                L.append(center[j])
+                j = j + 1
+    return L
