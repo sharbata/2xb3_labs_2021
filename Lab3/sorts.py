@@ -35,7 +35,6 @@ def merge_bottom(L, start, mid, end):
             L[k] = Right[j]
             j = j + 1
             k = k + 1
-        print(L)
     while (i < leftSize):
         L[k] = Left[i]
         i = i + 1
