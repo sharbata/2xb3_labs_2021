@@ -7,17 +7,22 @@ class Heap:
     def __init__(self, L):
         self.data = L
         self.length = len(L)
-        self.build_heap1()
+        #self.build_heap2()
 
     def build_heap1(self):
         for i in range(self.length // 2 - 1, -1, -1):
             self.sink(i)
 
     def build_heap2(self):
-        #TODO
+        temp = self.data
+        self.data = []
+        self.length = 0
+        for i in range(len(temp)):
+            self.insert(temp[i])
 
     def build_heap3(self):
         #TODO
+        return
 
     def sink(self, i):
         largest_known = i
