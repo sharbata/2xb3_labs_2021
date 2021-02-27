@@ -1,7 +1,7 @@
 from heap import *
 import math
 
-class K_Heap:
+class k_Heap:
     length = 0
     data = []
     k = 0
@@ -47,11 +47,11 @@ class K_Heap:
             whitespace = whitespace // self.k
         return s
 
-heap_2 = K_Heap([8,9,7,2,1,5,3,20,10], 2)
-print(heap_2.data)
+#heap_2 = k_Heap([8,9,7,2,1,5,3,20,10], 2)
+#print(heap_2.data)
 
-heap_3 = K_Heap([8,9,7,2,1,5,3,20,10], 3)
-print(heap_3.data)
+#heap_3 = k_Heap([8,9,7,2,1,5,3,20,10], 3)
+#print(heap_3.data)
 
-heap_4 = K_Heap([8,9,7,2,1,5,3,20,10], 4)
-print(heap_4.data)
+#heap_4 = k_Heap([8,9,7,2,1,5,3,20,10], 4)
+#print(heap_4.data)
