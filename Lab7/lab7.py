@@ -23,7 +23,7 @@ class Graph:
             self.adj[node2].append(node1)
 
     def number_of_nodes():
-        return len()
+        return len(self)
 
 ex = Graph(7)
 print(ex.adj)
@@ -61,14 +61,13 @@ def BFS(G, node1, node2):
                 marked[node] = True
     return False
 
-print(BFS(ex, 0 , 6))
+#print(BFS(ex, 0 , 6))
 
 def BFS2(G, node1, node2):
     if not BFS(G, node1, node2):
         return []
     if BFS(G, node1, node2) and node1 == node2: 
         return [node1]
-    
     Q = deque([node1])
     marked = {node1 : True}
     for node in G.adj:
@@ -95,8 +94,8 @@ def BFS2(G, node1, node2):
     #return False
 
 print(BFS2(ex, 0, 6)) 
-print(BFS2(ex, 0, 9))
-print(BFS2(ex, 0, 0))
+#print(BFS2(ex, 0, 9))
+#print(BFS2(ex, 0, 0))
 
 #Depth First Search
 def DFS(G, node1, node2):
@@ -113,3 +112,34 @@ def DFS(G, node1, node2):
                     return True
                 S.append(node)
     return False
+
+def DFS2(G, node1, node2):
+    if not DFS(G, node1, node2): 
+        return []
+    if DFS(G, node1, node2) and node1 == node2: 
+        return [node1]
+
+    S = [node1]
+    marked = {}
+    for node in G.adj:
+        marked[node] = False
+    path = []
+    while len(S) != 0:
+        current_node = S.pop()
+        if current_node not in path: 
+            path.append(current_node)
+        if not marked[current_node]:
+            marked[current_node] = True
+            for node in G.adj[current_node]:
+                if node == node2:
+                    path.append(node)
+                    print(path)
+                    return path
+                S.append(node)
+            #print(S)
+            #print(marked)
+    return False
+
+#print(DFS(ex, 0, 0))
+#DFS2(ex, 0, 6)
+
