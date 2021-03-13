@@ -66,8 +66,8 @@ print(BFS(ex, 0 , 6))
 def BFS2(G, node1, node2):
     if not BFS(G, node1, node2):
         return []
-    
-    
+    if BFS(G, node1, node2) and node1 == node2: 
+        return [node1]
     
     Q = deque([node1])
     marked = {node1 : True}
@@ -100,7 +100,7 @@ print(BFS2(ex, 0, 0))
 
 #Depth First Search
 def DFS(G, node1, node2):
-    S = [node1]
+    S = [node1] 
     marked = {}
     for node in G.adj:
         marked[node] = False
