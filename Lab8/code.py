@@ -29,4 +29,4 @@ def create_random_graph(n):
         G.add_edge(random.randint(0,n), random.randint(0,n), n)
     return G
 
-mst_timing_output(prim1, prim2, 50, 10000, 50)
+#mst_timing_output(prim1, prim2, 50, 10000, 50)
