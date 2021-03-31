@@ -1,5 +1,6 @@
 
 import random
+import math
 
 class MinHeap:
     length = 0
