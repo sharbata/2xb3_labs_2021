@@ -50,6 +50,7 @@ def timing_output_k(algo_1, algo_2, lower, upper, increment):
         print(str(_) + "\t" + str(algo_1_runtime_size) + "\t" + str(algo_2_runtime_size))
 
 
-timing_output_size(bellman_ford_approx, bellman_ford, 5, 101, 1)
+#timing_output_size(bellman_ford, bellman_ford_approx, 5, 101, 1)
+timing_output_k(bellman_ford, bellman_ford_approx, 1, 1000, 1)
 
 
