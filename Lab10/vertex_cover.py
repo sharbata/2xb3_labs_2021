@@ -1,6 +1,7 @@
 from lab10 import *
 
 def vc_approx1(G):
+    
     return
 
 def vc_approx2(G):
